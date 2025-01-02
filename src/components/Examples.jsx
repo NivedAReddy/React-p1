@@ -1,23 +1,4 @@
-import { useState } from 'react';
-
-import Header from './components/Header/Header.jsx';
-import TabButton from './components/TabButton.jsx';
-import CoreConcepts from './components/CoreConcepts.jsx';
-import { EXAMPLES } from './data.js';
-
-function App() {
-  const [ selectedTopic, setSelectedTopic ] = useState();
-
-  function handleSelect (selectedButton) {
-    setSelectedTopic(selectedButton);
-    console.log(selectedTopic);
-  }
-  return (
-    <>
-      <Header/>
-      <main>
-        <CoreConcepts />
-        <section id="examples">
+<section id="examples">
           <h2>Examples</h2>
           <menu>
             <TabButton isSelected={selectedTopic === 'components'} onSelect={() => handleSelect('components')}>Components</TabButton>
@@ -34,9 +15,3 @@ function App() {
             </pre>
           </div> : null}
         </section>
-      </main>
-    </>
-  );
-}
-
-export default App;
